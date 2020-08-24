@@ -52,12 +52,12 @@ def scrape():
     # Visit the defined URL on your splinter broswers
     browser.visit(url_2)
     # delay action until browser loads
-    time.sleep(3)
+    time.sleep(1)
     # click on the sprinter browser link 'FULL IMAGE' to see the image we want to store
     browser.click_link_by_partial_text('FULL IMAGE')
 
     # delay action until browser loads
-    time.sleep(3)
+    time.sleep(1)
     # Scrape the web page for the image URL
     # First save the root webpage URL to add to the image source ('img src')
     jpl_url = 'https://www.jpl.nasa.gov'
@@ -101,7 +101,7 @@ def scrape():
     browser.visit(url_3)
 
     # delay action until browser loads
-    time.sleep(3)
+    time.sleep(1)
     #soupify
     soup = bs(browser.html, 'html.parser')
 
@@ -119,7 +119,7 @@ def scrape():
         # Open the splinter browser using the url_4 link we just created
         browser.visit(url_4)
         # Let the browser load for 1 seconds before scraping data
-        time.sleep(3)
+        time.sleep(1)
         # Soupify the page
         soup = bs(browser.html, 'html.parser')
         
@@ -156,5 +156,6 @@ def scrape():
     browser.quit()
 
     print('Webscraping and data dictionary creation - COMPLETE')
-
+    print(dict_mars_scrape)
     return dict_mars_scrape 
+
