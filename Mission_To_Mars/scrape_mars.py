@@ -29,7 +29,7 @@ def scrape():
     browser.visit(url)
 
     # Give the broswer time to load 
-    time.sleep(3)
+    time.sleep(1)
     # Create a BeautifulSoup object with the splinter broswer.html object and parse the html with 'html.parser' or 'lxml'
     soup = bs(browser.html, 'html.parser')
 
@@ -130,7 +130,7 @@ def scrape():
         
         # Find the link to the image in the 'ul' tag, then the 'a' tag, and then call the 2nd item 'href'
         # Store link string in variable 'image_link_hemi'
-        image_link_hemi = soup.find('ul').find_all('a')[1]['href']
+        image_link_hemi = soup.find('ul').find_all('a')[0]['href']
         
         # Find the title name using the 'h2' tag and class attribute 'title', and then pull the .text
         # Store title in variable 'title_text'
@@ -143,8 +143,8 @@ def scrape():
         })
         
         # Print out success message
-        print(f'Scrape of {title_text} successful')
-        time.sleep(1)
+        print(f'Scrape of {title_text} COMPLETE')
+        # time.sleep(1)
 
     print('Scrape of Mars Hemispheres - COMPLETE')
 
