@@ -3,11 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Visit Mars</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
-    <a href="/scrape"> scrape the mars site</a>
-    <br>
-     test to see if this works
+    <div class="container">
+        <div class="jumbotron text-center">
+            <h1>Planet Mars: The Next Frontier</h1>
+            <p>This is a webscraping application. Explore Mars with a press of the button</p>
+            <p class="h6">Written by <a href="https://www.linkedin.com/in/jay-sueno-359a274/">Jay Sueno</a> for the UCSD Data Science Program</p>
+            <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Explore Mars Now!</a></p>
+        </div>
+    </div>
+    <div class='container'>
+        <h2>Latest Mars news</h2>
+        <h4>{{ mars.nasa_mars_news_title }}</h4>
+        <p ><em>{{ mars.nasa_mars_news_caption }}</em></p>
+
+
+    </div>
 </body>
 </html>

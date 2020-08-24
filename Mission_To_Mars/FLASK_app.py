@@ -21,7 +21,7 @@ mongo = PyMongo(app, uri="mongodb://localhost:27017/mars_app")
 def index():
 
     mars_data = mongo.db.mars_data.find_one()
-    return render_template("index.html", mars_data=mars_data)
+    return render_template("index.html", mars=mars_data)
 
 
 @app.route("/scrape")

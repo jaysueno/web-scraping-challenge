@@ -42,6 +42,10 @@ def scrape():
     # Find the paragraph within that article summary and convert into .text and then .strip() of '/n'
     news_p = first_news_article.find('div', class_="article_teaser_body").text.strip()
 
+    # Save the article link url
+    article_link_string = first_news_article.find('a')['href']
+    article_url = url + article_link_string
+
     print('Scrape of NASA Mars News - COMPLETE')
 
 ### JPL Mars Space Images - Featured Image ###
@@ -145,11 +149,14 @@ def scrape():
 
     # Create a dictionary of all the web scraped data
     dict_mars_scrape = {
-        'nasa_mars_news_title': news_title,
-        'nasa_mars_news_caption': news_p,
-        'jpl_space_image': featured_image_url,
-        'mars_facts': html_mars_tbl,
-        'mars_hemispheres': hemisphere_image_list
+        'news_title': news_title,
+        'news_p': news_p,
+        'article_url': article_url,
+        'featured_image_url': featured_image_url,
+        'html_mars_tbl': html_mars_tbl,
+        'hemisphere_image_list': hemisphere_image_list
+        # Add the time of the scrape to the dictionary
+        'scrape_time': dt.datetime.now()
     }
 
     # Close browser after scraping is complete
