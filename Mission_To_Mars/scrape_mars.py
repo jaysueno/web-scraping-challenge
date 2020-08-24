@@ -14,10 +14,13 @@ def init_browser():
     # Establish chrome driver executable path. Make sure to define actual location on your drive.
     executable_path ={'executable_path': 'C:/Users/jaysu/chromedriver.exe'}
     # Open a splinter browser
-    browser = Browser('chrome', **executable_path, headless=False)
+    return Browser('chrome', **executable_path, headless=False)
 
 # Create a callable function to scrape the data from the website    
-def scrape():  
+def scrape(): 
+### Initialize splitner broswer ###
+    browser = init_browser()
+
 ### NASA Mars News ###
     # Define the the URL
     url = 'https://mars.nasa.gov/news/'
@@ -142,3 +145,5 @@ def scrape():
     }
 
     print('Webscraping and data dictionary creation - COMPLETE')
+
+    return dict_mars_scrape 
