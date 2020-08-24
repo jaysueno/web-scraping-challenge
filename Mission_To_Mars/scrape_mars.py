@@ -8,6 +8,7 @@ import requests
 from splinter import Browser
 from bs4 import BeautifulSoup as bs
 import time
+import datetime as dt
 
 # Create a function to initialize the webscraping browser with splinter 
 def init_browser():
@@ -23,7 +24,7 @@ def scrape():
 
 ### NASA Mars News ###
     # Define the the URL
-    url = 'https://mars.nasa.gov/news/'
+    url = 'https://mars.nasa.gov/news'
     # Visit the defined URL on your splinter broswers
     browser.visit(url)
 
@@ -154,7 +155,7 @@ def scrape():
         'article_url': article_url,
         'featured_image_url': featured_image_url,
         'html_mars_tbl': html_mars_tbl,
-        'hemisphere_image_list': hemisphere_image_list
+        'hemisphere_image_list': hemisphere_image_list,
         # Add the time of the scrape to the dictionary
         'scrape_time': dt.datetime.now()
     }

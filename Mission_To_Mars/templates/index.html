@@ -7,19 +7,35 @@
     <title>Visit Mars</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
+
 <body>
     <div class="container">
         <div class="jumbotron text-center">
             <h1>Planet Mars: The Next Frontier</h1>
             <p>This is a webscraping application. Explore Mars with a press of the button</p>
-            <p class="h6">Written by <a href="https://www.linkedin.com/in/jay-sueno-359a274/">Jay Sueno</a> for the UCSD Data Science Program</p>
+            <p class="h6">Written by <a href="https://www.linkedin.com/in/jay-sueno-359a274/" target="_blank">Jay Sueno</a> for the UCSD Data Science Program</p>
             <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Explore Mars Now!</a></p>
         </div>
     </div>
+
     <div class='container'>
         <h2>Latest Mars news</h2>
-        <h4>{{ mars.nasa_mars_news_title }}</h4>
-        <p ><em>{{ mars.nasa_mars_news_caption }}</em></p>
+        <h4><a href="{{ mars.article_url }}" target="_blank">{{ mars.news_title }}</a></h4>
+        <p ><em>{{ mars.news_p }}</em></p>
+    </div>
+
+    <div class='container'>
+        <div class="row">
+            <div class="col-lg-8">
+                <h2>Featured Mars Image</h2>
+                <img src="{{ mars.featured_image_url }}" width="100%" alt="featured mars image">
+            </div>
+            <div class="col-lg-4">
+                <h2>Mars Facts</h2>
+                <p>Taken from this <a href="https://space-facts.com/mars/"> site</a></p>
+                {{ mars.html_mars_tbl | safe }}
+            </div>
+        </div>
 
 
     </div>
