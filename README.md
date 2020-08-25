@@ -1,6 +1,6 @@
-Webscraping application using MongoDB, Flask, and Bootstrap4 for web dashboard.
+# Webscraping application using MongoDB, Flask, and Bootstrap4
 
-This app scrapes Mars related websites to pull recent article posts, images, links to urls, and a table.
+## This app scrapes live Mars related websites to pull recent article posts, images, links to urls, and a table. It stores the data in a no-sql database. It then renders a dashboard with data pulled from a mongo database.
 
 There are three files that work in unison in this app - a flask app with routes (flask_app.py), a python scrape function (scrape_mars.py), and an html file for our dashboard in the template folder (index.html).
 
@@ -12,10 +12,6 @@ In the flask app I created two routes. The first is the index/home "/". This rou
 
 I utilized Bootstrap4  to create my html for the web dashboard. I used jinga command syntax to call the data from the mongodb. 
 
-All rights reserved 2020. All code is created and owned by Jay Sueno. If you use his code, please visit his LinkedIn and give him a a skill endorsement in python and data science. Visit him at:
+### All rights reserved 2020. All code is created and owned by Jay Sueno. If you use his code, please visit his LinkedIn and give him a a skill endorsement in python and data science. Visit him at:
 
-https://www.linkedin.com/in/jay-sueno-359a274/
-
-### hello
-## test
-# see
+### https://www.linkedin.com/in/jay-sueno-359a274/
